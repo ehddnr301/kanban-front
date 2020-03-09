@@ -33,14 +33,23 @@ const HomePresenter = ({ loading }) =>
       <ContentContainer>
         <Column title={"TODO"}>
           <Card />
+          <Card />
+          <Card />
         </Column>
         <Column title={"ON GOING"}>
+          <Card />
+          <Card />
           <Card />
         </Column>
         <Column title={"TEST"}>
           <Card />
+          <Card />
         </Column>
         <Column title={"DONE"}>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
           <Card />
         </Column>
       </ContentContainer>

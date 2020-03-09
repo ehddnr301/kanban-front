@@ -21,7 +21,10 @@ const Button = styled.div``;
 
 const Title = styled.div``;
 
-const Content = styled.div``;
+const Content = styled.div`
+  width: 100%;
+  border: 1px solid blue;
+`;
 
 const Column = ({ title, children }) => (
   <Container>
