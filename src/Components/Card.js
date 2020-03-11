@@ -9,9 +9,11 @@ const Container = styled.div`
   border: 1px solid pink;
 `;
 
+const Content = styled.div``;
+
 const POSITION = { x: 0, y: 0 };
 
-const Card = () => {
+const Card = ({ id, title }) => {
   //   const [state, setState] = useState({
   //     isDragging: false,
   //     origin: POSITION,
@@ -72,7 +74,7 @@ const Card = () => {
   return (
     // <Container style={styles} onMouseDown={handleMouseDown}>
     <Container>
-      <div>1</div>
+      <Content id={id}>{title}</Content>
     </Container>
   );
 };

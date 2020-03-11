@@ -24,37 +24,53 @@ const ContentContainer = styled.div`
   justify-content: space-around;
 `;
 
-const HomePresenter = ({ loading }) =>
-  loading ? null : (
+const HomePresenter = ({ loading, items }) => {
+  return loading ? null : (
     <Container>
       <NavWrapper>
         <NavTitle>Kanban Board</NavTitle>
       </NavWrapper>
       <ContentContainer>
-        <Column title={"TODO"}>
-          <Card />
-          <Card />
-          <Card />
-        </Column>
-        <Column title={"ON GOING"}>
-          <Card />
-          <Card />
-          <Card />
-        </Column>
-        <Column title={"TEST"}>
-          <Card />
-          <Card />
-        </Column>
-        <Column title={"DONE"}>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </Column>
+        {items && (
+          <Column title={"TODO"}>
+            {items.map(item =>
+              item.category === "todo" ? (
+                <Card id={item.id} title={"asdgasd"}></Card>
+              ) : null
+            )}
+          </Column>
+        )}
+        {items && (
+          <Column title={"ONGOING"}>
+            {items.map(item =>
+              item.category === "ongoing" ? (
+                <Card id={item.id} title={item.title}></Card>
+              ) : null
+            )}
+          </Column>
+        )}
+        {items && (
+          <Column title={"TEST"}>
+            {items.map(item =>
+              item.category === "test" ? (
+                <Card id={item.id} title={item.title}></Card>
+              ) : null
+            )}
+          </Column>
+        )}
+        {items && (
+          <Column title={"DONE"}>
+            {items.map(item =>
+              item.category === "done" ? (
+                <Card id={item.id} title={item.title}></Card>
+              ) : null
+            )}
+          </Column>
+        )}
       </ContentContainer>
     </Container>
   );
+};
 
 HomePresenter.propTypes = {
   loading: propTypes.bool.isRequired
