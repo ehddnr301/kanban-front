@@ -32,16 +32,16 @@ const HomePresenter = ({ loading, items }) => {
       </NavWrapper>
       <ContentContainer>
         {items && (
-          <Column title={"TODO"}>
+          <Column title={"TODO"} category={"todo"}>
             {items.map(item =>
               item.category === "todo" ? (
-                <Card id={item.id} title={"asdgasd"}></Card>
+                <Card id={item.id} title={item.title}></Card>
               ) : null
             )}
           </Column>
         )}
         {items && (
-          <Column title={"ONGOING"}>
+          <Column title={"ONGOING"} category={"ongoing"}>
             {items.map(item =>
               item.category === "ongoing" ? (
                 <Card id={item.id} title={item.title}></Card>
@@ -50,7 +50,7 @@ const HomePresenter = ({ loading, items }) => {
           </Column>
         )}
         {items && (
-          <Column title={"TEST"}>
+          <Column title={"TEST"} category={"test"}>
             {items.map(item =>
               item.category === "test" ? (
                 <Card id={item.id} title={item.title}></Card>
@@ -59,7 +59,7 @@ const HomePresenter = ({ loading, items }) => {
           </Column>
         )}
         {items && (
-          <Column title={"DONE"}>
+          <Column title={"DONE"} category={"done"}>
             {items.map(item =>
               item.category === "done" ? (
                 <Card id={item.id} title={item.title}></Card>
