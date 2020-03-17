@@ -10,6 +10,6 @@ const api = axios.create({
 export const kanbanApi = {
   getCards: () => api.get("kanban/cards"),
   postCard: req => api.post("kanban/cards", req),
-  putCard: id => api.put(`kanban/cards/${id}`),
+  putCard: req => api.put(`kanban/cards/${req.id}`, req),
   deleteCard: id => api.delete(`kanban/cards/${id}`)
 };
