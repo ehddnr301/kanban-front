@@ -18,21 +18,19 @@ const DeleteBtn = styled.div`
   cursor: pointer;
 `;
 
-const Card = ({ id, title, category }) => {
+const Card = ({ id, title, category, items, setItems }) => {
   const onClick = async event => {
     event.preventDefault();
     await kanbanApi.deleteCard(id);
+    const newItems = items.filter(item => item.id !== id);
+    setItems(newItems);
   };
   return (
     <Container>
       <Content id={id} category={category}>
         {title}
       </Content>
-      <DeleteBtn onClick={onClick}>
-        <span role="img" aria-label="x">
-          ❌
-        </span>
-      </DeleteBtn>
+      <DeleteBtn onClick={onClick}>❌</DeleteBtn>
     </Container>
   );
 };

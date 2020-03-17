@@ -41,6 +41,8 @@ const HomePresenter = ({ loading, items, setItems }) => {
                   key={item.id}
                   title={item.title}
                   category={item.category}
+                  setItems={setItems}
+                  items={items}
                 ></Card>
               ))}
         </Column>
@@ -59,6 +61,8 @@ const HomePresenter = ({ loading, items, setItems }) => {
                   key={item.id}
                   title={item.title}
                   category={item.category}
+                  setItems={setItems}
+                  items={items}
                 ></Card>
               ))}
         </Column>
@@ -72,6 +76,8 @@ const HomePresenter = ({ loading, items, setItems }) => {
                   key={item.id}
                   title={item.title}
                   category={item.category}
+                  setItems={setItems}
+                  items={items}
                 ></Card>
               ))}
         </Column>
@@ -85,6 +91,8 @@ const HomePresenter = ({ loading, items, setItems }) => {
                   key={item.id}
                   title={item.title}
                   category={item.category}
+                  setItems={setItems}
+                  items={items}
                 ></Card>
               ))}
         </Column>
