@@ -35,9 +35,18 @@ const Card = ({ id, title, category, items, setItems }) => {
   };
 
   const changeCategory = async event => {
+    console.log("hi");
     const newCategory = event.target.value;
     const req = { id, title, category: newCategory };
     await kanbanApi.putCard(req);
+    try {
+      const {
+        data: { Items: it }
+      } = await kanbanApi.getCards();
+      setItems(it);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
