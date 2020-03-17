@@ -1,7 +1,10 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL
+  baseURL: process.env.REACT_APP_API_URL,
+  headers: {
+    "x-api-key": "B83O3pRsEn1qkjAafrjDM4XQEN054isA6MqLLmYN"
+  }
 });
 
 export const kanbanApi = {

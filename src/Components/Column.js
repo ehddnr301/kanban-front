@@ -37,19 +37,26 @@ const InputS = styled(Input)`
   display: ${props => (props.category === props.isInput ? "block" : "none")};
 `;
 
-const Column = ({ title, children, category }) => {
+const Column = ({ title, children, category, setItems, items }) => {
   const [isInput, setIsInput] = useState("none");
+  const [loading, setLoading] = useState(false);
   const create = useInput("");
   const onSubmit = async event => {
     event.preventDefault();
     let body = { title: create.value, category };
-    await kanbanApi.postCard(body);
+    const newCard = await kanbanApi.postCard(body);
+    const {
+      data: { id }
+    } = newCard;
+    const newObj = { id, title: create.value, category };
+    setItems([...items, newObj]);
     setIsInput("none");
     create.value = "";
   };
   const onClick = () => {
     setIsInput(category);
   };
+
   return (
     <Container>
       <Header>

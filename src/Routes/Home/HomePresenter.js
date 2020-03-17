@@ -31,15 +31,7 @@ const HomePresenter = ({ loading, items, setItems }) => {
         <NavTitle>Kanban Board</NavTitle>
       </NavWrapper>
       <ContentContainer>
-        <Column
-          title="TODO"
-          category="todo"
-          onDrop={tem => {
-            const currentItem = { ...tem };
-            currentItem.state = "todo";
-            setItems({ ...items, ...{ tem } });
-          }}
-        >
+        <Column title="TODO" category="todo" setItems={setItems} items={items}>
           {items &&
             items
               .filter(item => item.category === "todo")
@@ -55,11 +47,8 @@ const HomePresenter = ({ loading, items, setItems }) => {
         <Column
           title="ONGOING"
           category="ongoing"
-          onDrop={tem => {
-            const currentItem = { ...tem };
-            currentItem.state = "ongoing";
-            setItems({ ...items, ...{ tem } });
-          }}
+          setItems={setItems}
+          items={items}
         >
           {items &&
             items
@@ -73,15 +62,7 @@ const HomePresenter = ({ loading, items, setItems }) => {
                 ></Card>
               ))}
         </Column>
-        <Column
-          title="TEST"
-          category="test"
-          onDrop={tem => {
-            const currentItem = { ...tem };
-            currentItem.state = "test";
-            setItems({ ...items, ...{ tem } });
-          }}
-        >
+        <Column title="TEST" category="test" setItems={setItems} items={items}>
           {items &&
             items
               .filter(item => item.category === "test")
@@ -94,15 +75,7 @@ const HomePresenter = ({ loading, items, setItems }) => {
                 ></Card>
               ))}
         </Column>
-        <Column
-          title="DONE"
-          category="done"
-          onDrop={tem => {
-            const currentItem = { ...tem };
-            currentItem.state = "done";
-            setItems({ ...items, ...{ tem } });
-          }}
-        >
+        <Column title="DONE" category="done" setItems={setItems} items={items}>
           {items &&
             items
               .filter(item => item.category === "done")
