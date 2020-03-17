@@ -35,7 +35,7 @@ const HomePresenter = ({ loading, items }) => {
           <Column title={"TODO"} category={"todo"}>
             {items.map(item =>
               item.category === "todo" ? (
-                <Card id={item.id} title={item.title}></Card>
+                <Card id={item.id} title={item.title} category={"todo"}></Card>
               ) : null
             )}
           </Column>
@@ -44,7 +44,11 @@ const HomePresenter = ({ loading, items }) => {
           <Column title={"ONGOING"} category={"ongoing"}>
             {items.map(item =>
               item.category === "ongoing" ? (
-                <Card id={item.id} title={item.title}></Card>
+                <Card
+                  id={item.id}
+                  title={item.title}
+                  category={"ongoing"}
+                ></Card>
               ) : null
             )}
           </Column>
@@ -53,7 +57,7 @@ const HomePresenter = ({ loading, items }) => {
           <Column title={"TEST"} category={"test"}>
             {items.map(item =>
               item.category === "test" ? (
-                <Card id={item.id} title={item.title}></Card>
+                <Card id={item.id} title={item.title} category={"test"}></Card>
               ) : null
             )}
           </Column>
@@ -62,7 +66,7 @@ const HomePresenter = ({ loading, items }) => {
           <Column title={"DONE"} category={"done"}>
             {items.map(item =>
               item.category === "done" ? (
-                <Card id={item.id} title={item.title}></Card>
+                <Card id={item.id} title={item.title} category={"done"}></Card>
               ) : null
             )}
           </Column>

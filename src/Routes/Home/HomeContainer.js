@@ -12,7 +12,6 @@ const HomeContainer = () => {
       const {
         data: { Items }
       } = await kanbanApi.getCards();
-      console.log(Items);
       setItems(Items);
       setLoading(false);
     } catch (e) {

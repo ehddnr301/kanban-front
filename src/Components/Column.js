@@ -66,7 +66,7 @@ const Column = ({ title, children, category }) => {
           ></InputS>
         </form>
       </InputContainer>
-      <Content>{children}</Content>
+      <Content id={category}>{children}</Content>
     </Container>
   );
 };
