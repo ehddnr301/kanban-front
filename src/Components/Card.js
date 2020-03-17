@@ -1,7 +1,6 @@
-import React, { useState, useCallback, useMemo, useEffect } from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { kanbanApi } from "../api";
 
 const Container = styled.div`
   margin: 10px;
@@ -15,24 +14,22 @@ const Content = styled.div`
   width: 100%;
 `;
 
-const DeleteBtn = styled.div``;
-
-const POSITION = { x: 0, y: 0 };
+const DeleteBtn = styled.div`
+  cursor: pointer;
+`;
 
 const Card = ({ id, title, category }) => {
   const [cate, setCate] = useState(category);
-  const onMouseDown = event => {
-    const currentCategory = event.target.parentNode.parentNode.id;
-    setCate("none");
-
-    const handleDelete = e => {};
+  const onClick = async event => {
+    event.preventDefault();
+    await kanbanApi.deleteCard(id);
   };
   return (
     <Container>
-      <Content id={id} category={category} onMouseDown={onMouseDown}>
+      <Content id={id} category={category}>
         {title}
       </Content>
-      <DeleteBtn onClick={}>❌</DeleteBtn>
+      <DeleteBtn onClick={onClick}>❌</DeleteBtn>
     </Container>
   );
 };

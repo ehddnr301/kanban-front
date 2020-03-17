@@ -13,6 +13,7 @@ const HomeContainer = () => {
         data: { Items }
       } = await kanbanApi.getCards();
       setItems(Items);
+      console.log(Items);
       setLoading(false);
     } catch (e) {
       setError(e);
@@ -22,6 +23,6 @@ const HomeContainer = () => {
     didMount();
   }, []);
 
-  return <HomePresenter loading={loading} items={items} />;
+  return <HomePresenter loading={loading} items={items} setItems={setItems} />;
 };
 export default HomeContainer;

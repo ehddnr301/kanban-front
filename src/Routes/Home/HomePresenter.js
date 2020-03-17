@@ -24,53 +24,97 @@ const ContentContainer = styled.div`
   justify-content: space-around;
 `;
 
-const HomePresenter = ({ loading, items }) => {
+const HomePresenter = ({ loading, items, setItems }) => {
   return loading ? null : (
     <Container>
       <NavWrapper>
         <NavTitle>Kanban Board</NavTitle>
       </NavWrapper>
       <ContentContainer>
-        {items && (
-          <Column title={"TODO"} category={"todo"}>
-            {items.map(item =>
-              item.category === "todo" ? (
-                <Card id={item.id} title={item.title} category={"todo"}></Card>
-              ) : null
-            )}
-          </Column>
-        )}
-        {items && (
-          <Column title={"ONGOING"} category={"ongoing"}>
-            {items.map(item =>
-              item.category === "ongoing" ? (
+        <Column
+          title="TODO"
+          category="todo"
+          onDrop={tem => {
+            const currentItem = { ...tem };
+            currentItem.state = "todo";
+            setItems({ ...items, ...{ tem } });
+          }}
+        >
+          {items &&
+            items
+              .filter(item => item.category === "todo")
+              .map(item => (
                 <Card
                   id={item.id}
+                  key={item.id}
                   title={item.title}
-                  category={"ongoing"}
+                  category={item.category}
                 ></Card>
-              ) : null
-            )}
-          </Column>
-        )}
-        {items && (
-          <Column title={"TEST"} category={"test"}>
-            {items.map(item =>
-              item.category === "test" ? (
-                <Card id={item.id} title={item.title} category={"test"}></Card>
-              ) : null
-            )}
-          </Column>
-        )}
-        {items && (
-          <Column title={"DONE"} category={"done"}>
-            {items.map(item =>
-              item.category === "done" ? (
-                <Card id={item.id} title={item.title} category={"done"}></Card>
-              ) : null
-            )}
-          </Column>
-        )}
+              ))}
+        </Column>
+        <Column
+          title="ONGOING"
+          category="ongoing"
+          onDrop={tem => {
+            const currentItem = { ...tem };
+            currentItem.state = "ongoing";
+            setItems({ ...items, ...{ tem } });
+          }}
+        >
+          {items &&
+            items
+              .filter(item => item.category === "ongoing")
+              .map(item => (
+                <Card
+                  id={item.id}
+                  key={item.id}
+                  title={item.title}
+                  category={item.category}
+                ></Card>
+              ))}
+        </Column>
+        <Column
+          title="TEST"
+          category="test"
+          onDrop={tem => {
+            const currentItem = { ...tem };
+            currentItem.state = "test";
+            setItems({ ...items, ...{ tem } });
+          }}
+        >
+          {items &&
+            items
+              .filter(item => item.category === "test")
+              .map(item => (
+                <Card
+                  id={item.id}
+                  key={item.id}
+                  title={item.title}
+                  category={item.category}
+                ></Card>
+              ))}
+        </Column>
+        <Column
+          title="DONE"
+          category="done"
+          onDrop={tem => {
+            const currentItem = { ...tem };
+            currentItem.state = "done";
+            setItems({ ...items, ...{ tem } });
+          }}
+        >
+          {items &&
+            items
+              .filter(item => item.category === "done")
+              .map(item => (
+                <Card
+                  id={item.id}
+                  key={item.id}
+                  title={item.title}
+                  category={item.category}
+                ></Card>
+              ))}
+        </Column>
       </ContentContainer>
     </Container>
   );
