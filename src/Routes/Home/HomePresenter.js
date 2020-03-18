@@ -6,22 +6,26 @@ import Card from "../../Components/Card";
 
 const Container = styled.div`
   margin: 50px;
+  color: white;
 `;
 
 const NavWrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 30px;
 `;
 
 const NavTitle = styled.div`
-  font-size: 24px;
+  font-size: 36px;
   font-weight: 600;
 `;
 
 const ContentContainer = styled.div`
   display: flex;
   justify-content: space-around;
+  color: black;
+  width: 100%;
 `;
 
 const HomePresenter = ({ loading, items, setItems }) => {

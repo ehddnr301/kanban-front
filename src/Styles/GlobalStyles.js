@@ -6,4 +6,8 @@ export default createGlobalStyle`
     * {
         box-sizing:border-box;
     }
+    body{
+        background-color:#777777;
+        font-family: "Baloo Chettan 2", cursive;
+    }
 `;

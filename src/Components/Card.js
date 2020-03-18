@@ -10,14 +10,24 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #ebd862;
+  border-radius: 10px;
 `;
 
 const Content = styled.div`
   width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+
+  div {
+    font-size: 24px;
+  }
 `;
 
 const DeleteBtn = styled.div`
   cursor: pointer;
+  margin-right: 10px;
 `;
 
 const Select = styled.select`
@@ -35,7 +45,6 @@ const Card = ({ id, title, category, items, setItems }) => {
   };
 
   const changeCategory = async event => {
-    console.log("hi");
     const newCategory = event.target.value;
     const req = { id, title, category: newCategory };
     await kanbanApi.putCard(req);
@@ -55,7 +64,7 @@ const Card = ({ id, title, category, items, setItems }) => {
         <DeleteX />
       </DeleteBtn>
       <Content id={id} category={category}>
-        {title}
+        <div>{title}</div>
       </Content>
       <Select onChange={changeCategory}>
         <option value="">Category</option>

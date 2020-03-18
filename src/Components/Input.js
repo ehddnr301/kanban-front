@@ -18,7 +18,8 @@ const Input = ({
   value,
   onChange,
   type = "text",
-  className
+  className,
+  maxlength = "16"
 }) => (
   <Container
     placeholder={placeholder}
@@ -27,6 +28,7 @@ const Input = ({
     onChange={onChange}
     type={type}
     className={className}
+    maxlength={maxlength}
   />
 );
 Input.propTypes = {
