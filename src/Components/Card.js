@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { kanbanApi } from "../api";
-import { DeleteX } from "./Icons";
+import { DeleteX, Pin } from "./Icons";
 
 const Container = styled.div`
   position: relative;
@@ -69,7 +69,7 @@ const Card = ({ id, title, category, items, setItems }) => {
   return (
     <Container>
       <DeleteBtn onClick={onClick}>
-        <DeleteX />
+        <Pin />
       </DeleteBtn>
       <Content id={id} category={category}>
         <div>{title}</div>
