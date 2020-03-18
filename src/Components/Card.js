@@ -4,11 +4,13 @@ import { kanbanApi } from "../api";
 import { DeleteX } from "./Icons";
 
 const Container = styled.div`
+  position: relative;
   margin: 10px;
+  max-width: 235px;
   width: 90%;
   border: 1px solid gray;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: #ebd862;
   border-radius: 10px;
@@ -26,11 +28,17 @@ const Content = styled.div`
 `;
 
 const DeleteBtn = styled.div`
+  position: absolute;
+  top: 5px;
+  left: 5px;
   cursor: pointer;
   margin-right: 10px;
 `;
 
 const Select = styled.select`
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
   background-color: white;
   color: black;
   font-family: Arial;
