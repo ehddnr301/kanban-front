@@ -3,13 +3,12 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Container = styled.input`
-  border: 0;
-  border: 1px solid pink;
-  border-radius: 5px;
-  background-color: pink;
+  border: none;
+  border-radius: 10px;
+  background-color: #ebd862;
   height: 35px;
   font-size: 12px;
-  padding: 0px 15px;
+  padding: 45px 40px;
 `;
 
 const Input = ({

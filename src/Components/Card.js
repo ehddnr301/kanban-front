@@ -21,10 +21,9 @@ const Content = styled.div`
   height: 100px;
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  div {
-    font-size: 24px;
-  }
+  font-size: 24px;
 `;
 
 const DeleteBtn = styled.div`
