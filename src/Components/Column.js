@@ -35,6 +35,7 @@ const Title = styled.div`
 `;
 
 const Content = styled.div`
+  margin-top: 30px;
   width: 100%;
 `;
 

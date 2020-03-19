@@ -35,7 +35,7 @@ const HomePresenter = ({ loading, items, setItems }) => {
         <NavTitle>Kanban Board</NavTitle>
       </NavWrapper>
       <ContentContainer>
-        <Column title="TODO" category="todo" setItems={setItems} items={items}>
+        <Column title="Todo" category="todo" setItems={setItems} items={items}>
           {items &&
             items
               .filter(item => item.category === "todo")
@@ -51,7 +51,7 @@ const HomePresenter = ({ loading, items, setItems }) => {
               ))}
         </Column>
         <Column
-          title="ONGOING"
+          title="Going"
           category="ongoing"
           setItems={setItems}
           items={items}
@@ -70,7 +70,7 @@ const HomePresenter = ({ loading, items, setItems }) => {
                 ></Card>
               ))}
         </Column>
-        <Column title="TEST" category="test" setItems={setItems} items={items}>
+        <Column title="Test" category="test" setItems={setItems} items={items}>
           {items &&
             items
               .filter(item => item.category === "test")
@@ -85,7 +85,7 @@ const HomePresenter = ({ loading, items, setItems }) => {
                 ></Card>
               ))}
         </Column>
-        <Column title="DONE" category="done" setItems={setItems} items={items}>
+        <Column title="Done" category="done" setItems={setItems} items={items}>
           {items &&
             items
               .filter(item => item.category === "done")
