@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL: "https://mq3qr003g5.execute-api.ap-northeast-2.amazonaws.com/prod/",
   headers: {
     "x-api-key": "B83O3pRsEn1qkjAafrjDM4XQEN054isA6MqLLmYN"
   }
